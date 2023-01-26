@@ -1,17 +1,21 @@
 const { Console } = require("console");
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 8000;
 const fs = require('fs');
+
 app.use(express.json());
+
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
-app.get("/", (req, res) => {
+
+app.get("/", (req, res) => {x
   res.json({ message: "ok" });
 });
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
@@ -26,7 +30,7 @@ var con = mysql.createConnection({
 });
 
 con.connect((err) => {
-  if(err){
+  if (err) {
     console.log('Error connecting to Db');
     return;
   }
